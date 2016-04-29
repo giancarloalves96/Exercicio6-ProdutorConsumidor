@@ -5,7 +5,7 @@ class Writer extends Thread {
 	 FileInputStream fs;
 	 public void run() {
 		 int x;
-		 String output = "Um produtor("+this.getName()+") disponinbilizou um novo inventário: ";
+		 String output = "A producer "+this.getName()+" made a new inventory:";
 		 try {
 			 while ((x = fs.read()) != -1){
 				 output += (char) x;
@@ -23,7 +23,7 @@ class Writer extends Thread {
 		 this.b = b;
 		 try {
 			 fs = new FileInputStream(fname);
-			 System.out.println("Um novo produtor(" + this.getName() + ") nasceu, com este inventário: " + fname);
+			 System.out.println("A new producer " + this.getName() + " was born, with inventory " + fname);
 		 } catch (Exception e) {
 			 fs = null;
 			 System.err.println("Cannot open "+fname);

@@ -2,7 +2,7 @@ class Reader extends Thread {
 	Buffer b;
 	public void run() {
 		 char x;
-		 String output = "Um consumidor("+this.getName().toString()+") pegou uma coleção de produtos: ";
+		 String output = "The consumer "+this.getName().toString()+" got a collection:";
 		 while ((x = b.get()) != ' ')
 			 output += x;
 		 System.out.println(output);
@@ -11,6 +11,6 @@ class Reader extends Thread {
 	 
 	Reader(Buffer b) {
 		this.b = b;
-		System.out.println("Um novo consumidor(" + this.getName() + ") nasceu.");
+		System.out.println("A new consumer " + this.getName() + " was born.");
 	}
 } 
